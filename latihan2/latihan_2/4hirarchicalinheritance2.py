@@ -1,0 +1,59 @@
+class Kendaraan:
+
+    def __init__(self, nama):
+        self.nama = nama
+
+    def get_nama(self):
+        return self.nama
+    
+
+class Mobil(Kendaraan):
+
+    def __init__(self, nama, merek):
+        super().__init__(nama)
+        self.merek = merek
+
+    def get_merek(self):
+        return self.merek
+    
+
+class SepedaMotor(Kendaraan):
+
+    def __init__(self, nama, tipe):
+        super().__init__(nama)
+        self.tipe = tipe
+
+    def get_tipe(self):
+        return self.tipe
+    
+
+# turunan Hierarchical Inheritance
+class Truk(Mobil):
+
+    def __init__(self, nama, merek, kapasitas):
+        super().__init__(nama, merek)
+        self.kapasitas = kapasitas
+
+    def get_kapasitas(self):
+        return self.kapasitas
+    
+
+# turunan Hierarchical Inheritance
+class MotorListrik(SepedaMotor):
+
+    def __init__(self, nama, tipe, daya):
+        super().__init__(nama, tipe)
+        self.daya = daya
+
+    def get_daya(self):
+        return self.daya
+    
+truk = Truk('Truk 1', 'Tronton', '20 ton')
+print('Nama kendaraan  : ', truk.get_nama())
+print('Merek\t\t: ', truk.get_merek())
+print('Kapasitas\t: ', truk.get_kapasitas(),'\n')
+
+motor = MotorListrik('Motor Listrik 1', 'Pasific Nimbuz', '48V')
+print('Nama kendaraan  : ', motor.get_nama())
+print('Merek\t\t: ', motor.get_tipe())
+print('Kapasitas\t: ', motor.get_daya())
